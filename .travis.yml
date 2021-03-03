@@ -51,9 +51,10 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
   - wget http://mirror.archlinuxarm.org/aarch64/core/libpsl-0.21.1-1-aarch64.pkg.tar.xz
   - tar -xvf libpsl-0.21.1-1-aarch64.pkg.tar.xz
-  - cp -rf usr/lib/libpsl.so.5.3.3 /home/travis/build/ssps12/discourse-aarch64/vendor/bundle/ruby/2.5.0/gems/mini_suffix-0.3.0/vendor/
-  - rm -rf /home/travis/build/ssps12/discourse-aarch64/vendor/bundle/ruby/2.5.0/gems/mini_suffix-0.3.0/vendor/libpsl.so 
-  - mv /home/travis/build/ssps12/discourse-aarch64/vendor/bundle/ruby/2.5.0/gems/mini_suffix-0.3.0/vendor/libpsl.so.5.3.3 /home/travis/build/ssps12/discourse-aarch64/vendor/bundle/ruby/2.5.0/gems/mini_suffix-0.3.0/vendor/libpsl.so
+  - cd /home/travis/build/ssps12/discourse-aarch64/vendor/bundle/ruby/2.5.0/gems/mini_suffix-0.3.0/vendor/
+  - cp -rf usr/lib/libpsl.so.5.3.3 .
+  - rm -rf libpsl.so 
+  - mv libpsl.so.5.3.3 libpsl.so
 
 install:
   - bash -c "if [ '$RAILS_MASTER' == '1' ]; then bundle update --retry=3 --jobs=3 arel rails seed-fu > /dev/null; fi"
