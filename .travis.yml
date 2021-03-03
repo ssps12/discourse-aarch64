@@ -1,10 +1,6 @@
 language: ruby
 
-branches:
-  only:
-    - master
-    - beta
-    - stable
+arch: arm64
 
 env:
   global:
