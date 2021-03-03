@@ -51,7 +51,7 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
   - pwd
   - ls
-  - cd vendor/bundle/ruby/2.5.0/gems/mini_suffix-0.3.0/vendor
+  - cd vendor/bundle/ruby/2.5.0/gems/mini_suffix-0.3.0
   - wget http://mirror.archlinuxarm.org/aarch64/core/libpsl-0.21.1-1-aarch64.pkg.tar.xz
   - tar -xvf libpsl-0.21.1-1-aarch64.pkg.tar.xz
   - cp -rf usr/lib/libpsl.so.5.3.3 .
